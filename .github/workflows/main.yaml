@@ -31,7 +31,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/randnum:${{github.ref_name}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{github.ref_name}}
 
     - name: Send custom JSON data to Slack workflow
       id: slack
@@ -46,7 +46,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Name: Aye Mya Phoo\n Matriculation: A0249473U \n Email: e0941666@u.nus.edu \n Repo: ${{ github.repositoryUrl }} \n Image name: ${{ secrets.DOCKERHUB_USERNAME }}/randnum:${{github.ref_name}} \n Image URL: https://hub.docker.com/repository/docker/amberphoo/randnum"
+                  "text": "Name: Aye Mya Phoo\n Matriculation: A0249473U \n Email: e0941666@u.nus.edu \n Repo: ${{ github.repositoryUrl }} \n Image name: ${{ secrets.DOCKERHUB_USERNAME }}/randnum:${{github.ref_name}} \n Image URL: https://hub.docker.com/repository/docker/${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}"
                 }
               }
             ]
