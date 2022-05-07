@@ -1,7 +1,7 @@
 name: My First Workflow
 on:
   push: 
-  
+
 jobs:
   echo_the_date:
     runs-on: ubuntu-latest
@@ -38,6 +38,15 @@ jobs:
         payload: |
           {
             "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Name: Aye Mya Phoo\n Matriculation: A0249473U \n Email: e0941666@u.nus.edu \n Repo: https://github.com/Amber-Phoo/randnum \n Image name: amberphoo/randnum:v0.1 \n Image URL: https://hub.docker.com/repository/docker/amberphoo/randnum"
+                }
+              }
+            ]
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
