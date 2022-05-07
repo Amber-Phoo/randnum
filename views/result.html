@@ -1,0 +1,8 @@
+{{define "content"}}
+	<h1>Your {{.count}} lucky numbers are</h1>
+	<div>
+		{{range $index, $num := .nums}}
+			<img src="/images/number{{$num}}.jpg" class="thumbnail">
+		{{end}}
+	</div>
+{{end}}

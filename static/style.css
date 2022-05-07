@@ -1,0 +1,13 @@
+.thumbnail {
+	height: 25vh;
+	width: auto;
+	margin: 15px;
+	padding: 10px;
+	border: 1px lightgrey solid;
+	border-radius: 8px;
+}
+
+.center-it {
+	display: flex;
+	justify-content: center;
+}
