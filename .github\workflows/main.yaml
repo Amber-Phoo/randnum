@@ -2,9 +2,7 @@ name: My First Workflow
 on:
   push: 
     branches:
-      - "v*.*"
-    tags:
-      - 'r*.*'
+      - "v0.1"
 jobs:
   echo_the_date:
     runs-on: ubuntu-latest
